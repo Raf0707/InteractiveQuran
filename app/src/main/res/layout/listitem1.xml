@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="24dp"
-        app:strokeColor="@color/purple_300"
+        app:strokeColor="#788968"
         app:cardUseCompatPadding="true">
 
         <TextView
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="@color/purple_300"
+            android:textColor="#788968"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="10dp"

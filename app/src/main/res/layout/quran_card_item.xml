@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="13dp"
+    android:layout_marginTop="13dp"
+    android:layout_marginRight="25dp"
+    android:layout_marginLeft="25dp"
+    android:background="#C9DCD8"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="184dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:text="Сура 5. Аль-Маида"
+        android:textAlignment="gravity"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/headingArabic"
+        android:layout_width="184dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:text="سورة «المائدة»"
+        android:textAlignment="gravity"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/heading"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        app:cardCornerRadius="45dp"
+        app:cardElevation="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/numVerse"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/conturdesc"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="    "
+                />
+
+            <ImageButton
+                android:id="@+id/play_verse"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:background="@drawable/conturdesc"
+                android:src="@drawable/play"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="    "
+                />
+
+            <ImageButton
+                android:id="@+id/repeatOneVerse"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:visibility="gone"
+                android:background="@drawable/conturdesc"
+                android:src="@drawable/repeat_one_off"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="    "
+                />
+
+            <ImageButton
+                android:id="@+id/playAllVerses"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:visibility="gone"
+                android:background="@drawable/conturdesc"
+                android:src="@drawable/repeat_on"/>
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:orientation="vertical">
+
+                <SeekBar
+                    android:id="@+id/lengthAyatSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </SeekBar>
+
+                <TextView
+                    android:id="@+id/currentSeconds"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/conturdesc"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:padding="10dp"
+                    android:text="00:00"
+                    android:textSize="20sp"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/arabicViewVerse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="арабский"
+                android:textSize="30sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/translateViewVerse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="перевод"
+                android:textSize="20sp">
+
+            </TextView>
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/numCustVerse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

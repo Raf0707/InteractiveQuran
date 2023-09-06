@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Interactive Quran</string>
+    <string name="app_name">Quran Interactive</string>
     <string name="title_home">فرض</string>
     <string name="title_dashboard">الذكر</string>
     <string name="title_notifications">كتاب</string>
@@ -17,7 +17,7 @@
     <string name="mail_raf" translatable="false">raf_android-dev@mail.ru</string>
     <string name="mail_danila" translatable="false">rswayfarersx@gmail.com</string>
     <string name="source_code">Исходный код</string>
-    <string name="source_code_url" translatable="false">https://github.com/Raf0707/Al_Asma_Ul_Husna</string>
+    <string name="source_code_url" translatable="false">https://github.com/Raf0707/QuranInteractive</string>
     <string name="from_tabiin">from Tabiin</string>
     <string name="tabiin" translatable="false">https://vk.com/club213851453</string>
     <string name="Raf_title">Рафаил Кикматулин</string>
@@ -61,4 +61,6 @@
     <string name="tgLink">https://t.me/+OoI8UWDVVm0yMDNi</string>
     <string name="tabiin_android_dev" translatable="false">https://vk.com/@tabiin_muslim_planner-tabiin-android-development</string>
     <!-- TODO: Remove or change this placeholder text -->
-    </resources>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

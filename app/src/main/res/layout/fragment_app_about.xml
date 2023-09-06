@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:id="@+id/about_app"
     tools:openDrawer="start"
-    tools:context="ru.tabiin.alasmaulhusna.ui.about_app.AppAboutFragment">
+    tools:context="raf.tabiin.quraninteractive.about_app.AppAboutFragment">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollZickr"
@@ -51,7 +51,7 @@
                                 android:layout_width="160dp"
                                 android:layout_height="wrap_content"
                                 android:padding="8dp"
-                                android:src="@drawable/icon_names_banner" />
+                                android:src="@drawable/quran_karim_card" />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Al Asma Ul Husna"
+                                    android:text="Quran Interactive"
                                     android:textSize="20sp"
                                     android:textStyle="bold" />
 
@@ -240,7 +240,7 @@
                         android:id="@+id/otherAppsLink"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Другие приложения"
+                        android:text="Рекомендации"
                         android:textSize="24dp"
                         android:gravity="center">
                     </TextView>

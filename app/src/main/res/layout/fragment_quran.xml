@@ -7,7 +7,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="raf.tabiin.interactivequran.quran.QuranFragment">
+    tools:context="raf.tabiin.quraninteractive.quran.QuranFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -32,7 +32,21 @@
                 app:fastScrollVerticalThumbDrawable="@drawable/thumb_b"
                 app:fastScrollVerticalTrackDrawable="@drawable/line_x" />
 
-
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabQuranContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="16dp"
+                android:backgroundTint="#6b8e23"
+                android:src="@drawable/quran_content_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:tint="@color/white" />
 
         </FrameLayout>
 

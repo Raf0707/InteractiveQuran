@@ -1,5 +1,7 @@
 package raf.tabiin.quraninteractive.util;
 
+import android.content.Context;
+import android.content.res.AssetFileDescriptor;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.widget.ImageButton;
@@ -161,7 +163,9 @@ public class MyMediaPlayer {
 
     private void updateSeekBar() {
         if (seekBar != null) {
-            seekBar.setProgress(mediaPlayer.getCurrentPosition());
+            if (mediaPlayer.getCurrentPosition() != 1) {
+                seekBar.setProgress(mediaPlayer.getCurrentPosition() - 1);
+            }
             if (mediaPlayer.isPlaying()) {
                 Runnable runnable = this::updateSeekBar;
                 seekBar.postDelayed(runnable, 100);
@@ -170,23 +174,45 @@ public class MyMediaPlayer {
     }
 
     public void onComplete(ImageButton imageButton, int drawable) {
-
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 mp.start();
             }
         });
+
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
+            public void onCompletion(MediaPlayer mp) {
                 if (!repeatOne) {
                     imageButton.setImageResource(drawable);
                     mediaPlayer.pause();
                     mediaPlayer.seekTo(0);
-                } else mediaPlayer.setLooping(true);
+                } else {
+                    // Если включено повторение, то запустите аудио снова
+                    mediaPlayer.start();
+                }
             }
         });
+    }
+
+    public void playFromAssets(Context context, String assetFilePath) {
+        try {
+            AssetFileDescriptor afd = context.getAssets().openFd(assetFilePath);
+            mediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+            afd.close();
+
+            mediaPlayer.prepare();
+            mediaPlayer.start();
+
+            // Другой ваш код
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean isPlay() {
+        return mediaPlayer.isPlaying();
     }
 }
 

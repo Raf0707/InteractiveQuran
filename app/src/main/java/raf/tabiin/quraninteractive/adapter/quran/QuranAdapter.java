@@ -189,13 +189,14 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
 
                 mediaPlayer.setSeekBar(seekBar);
 
-                if (currentPlayingPosition == position) {
+                if (mediaPlayer.isPlay()) {
                     mediaPlayer.pause();
                     play.setImageResource(R.drawable.play);
                     currentPlayingPosition = -1;
                     isPlaying = false;
                 } else {
                     currentPlayingPosition = position;
+                    mediaPlayer.setSeekBar(seekBar);
                     isPlaying = true;
                     play.setImageResource(R.drawable.pause);
                     mediaPlayer.play(verses.get(position - 1).getAudioLink());
@@ -203,11 +204,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
 
                 mediaPlayer.onComplete(play, R.drawable.play);
 
-                /*if (currentPlayingPosition == position && isPlaying) {
-                    play.setImageResource(R.drawable.pause);
-                } else {
-                    play.setImageResource(R.drawable.play);
-                }*/
+
             } else {
                 Snackbar.make(v, "no internet connection", Snackbar.LENGTH_SHORT).show();
             }
@@ -216,71 +213,6 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             notifyDataSetChanged();
 
         });
-
-        /*
-        repeatOneVerse.setOnClickListener(v -> {
-
-            mediaPlayer.setSeekBar(seekBar);
-
-            if (currentPlayingPosition == position) {
-                mediaPlayer.pause();
-                play.setImageResource(R.drawable.play);
-                currentPlayingPosition = -1;
-                isPlaying = false;
-            } else {
-                currentPlayingPosition = position;
-                isPlaying = true;
-                play.setImageResource(R.drawable.pause);
-                mediaPlayer.play(verses.get(position).getAudioLink());
-                mediaPlayer.repeatOne();
-            }
-
-            mediaPlayer.onComplete(play, R.drawable.play);
-
-            if (currentPlayingPosition == position && isPlaying) {
-                play.setImageResource(R.drawable.pause);
-                repeatOneVerse.setImageResource(R.drawable.repeat_one_on);
-                mediaPlayer.play(verses.get(position - 1).getAudioLink());
-                mediaPlayer.repeatOne();
-            } else {
-                play.setImageResource(R.drawable.play);
-                repeatOneVerse.setImageResource(R.drawable.repeat_one_off);
-            }
-
-            notifyDataSetChanged();
-
-        });
-
-        playAllVerses.setOnClickListener(v -> {
-            mediaPlayer.setSeekBar(seekBar);
-
-            mediaPlayer.playQueue(verses, new RecyclerView(v.getContext()), MyMediaPlayer.getInstance(),
-                    play, R.drawable.play, R.drawable.pause, currentPlayingPosition);
-
-            if (currentPlayingPosition == position) {
-                mediaPlayer.pause();
-                play.setImageResource(R.drawable.play);
-                currentPlayingPosition = -1;
-                isPlaying = false;
-            } else {
-                currentPlayingPosition = position;
-                isPlaying = true;
-                play.setImageResource(R.drawable.pause);
-                mediaPlayer.play(verses.get(position - 1).getAudioLink());
-            }
-
-            mediaPlayer.onComplete(play, R.drawable.play);
-
-            if (currentPlayingPosition == position && isPlaying) {
-                play.setImageResource(R.drawable.pause);
-            } else {
-                play.setImageResource(R.drawable.play);
-            }
-
-            notifyDataSetChanged();
-
-        });
-        */
 
     }
 

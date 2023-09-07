@@ -98,7 +98,9 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         holder.heading.setVisibility(View.GONE);
         holder.headingArabic.setVisibility(View.GONE);
 
-        if (sura.getTranslatedName().equals("Дуа после прочтения Корана")) {
+        // НЕ ПОЛУЧИЛОСЬ
+        //if (sura.getTranslatedName().equals("Дуа после прочтения Корана")) {
+        if (sura.getVerses().size() == 2) {
             seekBar.setVisibility(View.GONE);
             //currentSeconds.setVisibility(View.GONE);
             num.setVisibility(View.GONE);
